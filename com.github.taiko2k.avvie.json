@@ -20,8 +20,9 @@
             "mkdir /app/bin",
             "cp -r * /app/bin/",
             "mkdir -p /app/share/icons/hicolor/scalable/apps",
+            "mkdir -p /app/share/icons/hicolor/symbolic/apps",
             "install -D ${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
-            "install -D icon64.png /app/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png",
+            "install -D ${FLATPAK_ID}-symbolic.svg /app/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}.svg",
             "install -D icon128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
             "install -D ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop",
             "install -D ${FLATPAK_ID}.appdata.xml /app/share/metainfo/${FLATPAK_ID}.appdata.xml",
@@ -31,7 +32,7 @@
             {
                "type":"git",
                "url":"https://github.com/Taiko2k/avvie.git",
-               "commit":"daabed7e8c3316f1bbf342c70403fd3262049683"
+               "commit":"25687ef2328ac64f4890dd921cfb4e08d16b2761"
             }
          ]
       },
