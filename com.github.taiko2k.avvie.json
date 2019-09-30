@@ -20,8 +20,10 @@
             "mkdir /app/bin",
             "cp -r * /app/bin/",
             "mkdir -p /app/share/icons/hicolor/scalable/apps",
+            "mkdir -p /app/share/icons/hicolor/scalable/actions",
             "mkdir -p /app/share/icons/hicolor/symbolic/apps",
             "install -D ${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+            "install -D image-crop.svg /app/share/icons/hicolor/scalable/actions/image-crop.svg",
             "install -D ${FLATPAK_ID}-symbolic.svg /app/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg",
             "install -D icon128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
             "install -D ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop",
@@ -32,23 +34,37 @@
             {
                "type":"git",
                "url":"https://github.com/Taiko2k/avvie.git",
-               "commit":"43d1f91abd6bc268c420df19bb2ff63169bb64af"
+               "commit":"0c0dfa76ee4c63945110465637174c6a52fb2914"
             }
          ]
       },
-      {
-          "name": "python3-pillow",
-          "buildsystem": "simple",
-          "build-commands": [
-              "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} pillow"
-          ],
-          "sources": [
-              {
-                  "type": "file",
-                  "url": "https://files.pythonhosted.org/packages/51/fe/18125dc680720e4c3086dd3f5f95d80057c41ab98326877fc7d3ff6d0ee5/Pillow-6.1.0.tar.gz",
-                  "sha256": "0804f77cb1e9b6dbd37601cee11283bba39a8d44b9ddb053400c58e0c0d7d9de"
-              }
-          ]
-      }
+		{
+			"name": "python3-pillow",
+			"buildsystem": "simple",
+			"build-commands": [
+			"pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} pillow"
+			],
+			"sources": [
+			{
+				"type": "file",
+				"url": "https://files.pythonhosted.org/packages/51/fe/18125dc680720e4c3086dd3f5f95d80057c41ab98326877fc7d3ff6d0ee5/Pillow-6.1.0.tar.gz",
+				"sha256": "0804f77cb1e9b6dbd37601cee11283bba39a8d44b9ddb053400c58e0c0d7d9de"
+			}
+			]
+		},
+		{
+			"name": "python3-piexif",
+			"buildsystem": "simple",
+			"build-commands": [
+			"pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} piexif"
+			],
+			"sources": [
+			{
+				"type": "file",
+				"url": "https://files.pythonhosted.org/packages/2c/d8/6f63147dd73373d051c5eb049ecd841207f898f50a5a1d4378594178f6cf/piexif-1.1.3-py2.py3-none-any.whl",
+				"sha256": "3bc435d171720150b81b15d27e05e54b8abbde7b4242cddd81ef160d283108b6"
+			}
+			]
+		}
    ]
 }
