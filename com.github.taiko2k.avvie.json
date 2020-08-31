@@ -3,7 +3,7 @@
    "runtime":"org.gnome.Platform",
    "runtime-version":"3.36",
    "sdk":"org.gnome.Sdk",
-   "command":"run.sh",
+   "command":"main.py",
    "finish-args":[
       "--share=ipc",
       "--socket=wayland",
@@ -27,14 +27,13 @@
             "install -D ${FLATPAK_ID}-symbolic.svg /app/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg",
             "install -D icon128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
             "install -D ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop",
-            "install -D ${FLATPAK_ID}.appdata.xml /app/share/metainfo/${FLATPAK_ID}.appdata.xml",
-            "install -D run.sh /app/bin/run.sh"
+            "install -D ${FLATPAK_ID}.appdata.xml /app/share/metainfo/${FLATPAK_ID}.appdata.xml"
          ],
          "sources":[
             {
                "type":"git",
                "url":"https://github.com/Taiko2k/avvie.git",
-               "commit":"dc3f1a19255e4eec75bb603f9dba53330c4f9488"
+               "commit":"dda3f9583bd22b21edbfbb2500402b9e3ca139f8"
             }
          ]
       },
